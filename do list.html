@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do List</title>
+
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            /* Modern, clean font */
+            background-color: #f0f4f8;
+            /* Light background */
+            padding: 40px;
+            /* Space around the content */
+            margin: 0;
+            /* Remove default margin */
+        }
+
+        h1 {
+            text-align: center;
+            /* Center the heading */
+            color: #333;
+            /* Dark gray text */
+        }
+
+        .task-input {
+            display: flex;
+            /* Align input fields and button horizontally */
+            justify-content: center;
+            /* Center inputs */
+            gap: 10px;
+            /* Space between inputs */
+            margin-bottom: 20px;
+            /* Space below inputs */
+        }
+
+        #new-task,
+        #task-deadline {
+            padding: 15px;
+            /* Space inside input fields */
+            border-radius: 8px;
+            /* Rounded corners */
+            border: 1px solid #ddd;
+            /* Light border */
+            width: 35%;
+            /* Width of input fields */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            /* Subtle shadow */
+        }
+
+        #add-task-button {
+            padding: 15px 25px;
+            /* Padding inside button */
+            background-color: #28a745;
+            /* Green background */
+            color: white;
+            /* White text */
+            border: none;
+            /* Remove default border */
+            border-radius: 8px;
+            /* Rounded corners */
+            cursor: pointer;
+            /* Pointer cursor */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            /* Button shadow */
+            transition: background-color 0.3s;
+            /* Smooth hover transition */
+        }
+
+        #add-task-button:hover {
+            background-color: #218838;
+            /* Darker green on hover */
+        }
+
+        #task-list {
+            list-style: none;
+            /* Remove bullet points */
+            padding: 0;
+            /* Remove default padding */
+            max-width: 600px;
+            /* Limit list width */
+            margin: 0 auto;
+            /* Center the task list */
+        }
+
+        #task-list li {
+            background-color: #fff;
+            /* White background */
+            margin: 10px 0;
+            /* Space between tasks */
+            padding: 20px;
+            /* Space inside task box */
+            border-radius: 10px;
+            /* Rounded corners */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            /* Task shadow */
+            display: flex;
+            /* Align buttons with task */
+            justify-content: space-between;
+            /* Spread task and buttons */
+            align-items: center;
+            /* Center content vertically */
+        }
+
+        .completed {
+            background-color: #d4edda;
+            /* Light green for completed tasks */
+            text-decoration: line-through;
+            /* Strikethrough for completed tasks */
+            color: #6c757d;
+            /* Muted text color */
+        }
+
+        .task-time,
+        .task-deadline {
+            font-size: 0.85rem;
+            /* Smaller text for time/deadline */
+            color: #666;
+            /* Gray text */
+        }
+
+        .btn-complete,
+        .btn-delete {
+            padding: 10px 15px;
+            /* Padding inside buttons */
+            border-radius: 8px;
+            /* Rounded corners for buttons */
+            font-size: 0.9rem;
+            /* Button text size */
+            cursor: pointer;
+            /* Pointer cursor */
+        }
+
+        .btn-complete {
+            background-color: #007bff;
+            /* Blue background */
+            color: white;
+            /* White text */
+        }
+
+        .btn-complete:hover {
+            background-color: #0056b3;
+            /* Darker blue on hover */
+        }
+
+        .btn-delete {
+            background-color: #dc3545;
+            /* Red background */
+            color: white;
+            /* White text */
+        }
+
+        .btn-delete:hover {
+            background-color: #c82333;
+            /* Darker red on hover */
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Task List</h1> <!-- Task list heading -->
+
+    <div class="task-input"> <!-- Container for input fields and button -->
+        <input type="text" id="new-task" placeholder="Add a new task" /> <!-- Input for task name -->
+        <input type="datetime-local" id="task-deadline" /> <!-- Input for task deadline -->
+        <button id="add-task-button">Add Task</button> <!-- Button to add task -->
+    </div>
+
+    <ul id="task-list"></ul>
+
+    <script src="do list.js"></script>
+</body>
+
+</html>
